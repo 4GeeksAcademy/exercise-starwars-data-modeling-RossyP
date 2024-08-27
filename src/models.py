@@ -47,15 +47,11 @@ class Especie(Base):
 class Favorito(Base):
     __tablename__= "favorito"
     id = Column(Integer, primary_key=True)
-    name = Column(String(50), nullable=False)
     usuario_id = Column(Integer, ForeignKey("usuario.id"), nullable = False)
     planeta_id = Column(Integer, ForeignKey("planeta.id"), nullable = False)
     especie_id = Column(Integer, ForeignKey("especie.id"), nullable = False)
     personaje_id = Column(Integer, ForeignKey("personaje.id"), nullable = False)
-    # usuarios = relationship("Usuario", backref="usuario", lazy=True)
-    # personajes = relationship('Personaje', backref='personaje', lazy=True)
-    # planetas = relationship("Planeta", backref="planeta", lazy=True)
-    # especies = relationship("Especie", backref="especie", lazy=True)
+ 
 
 # -----
 # class Person(Base):
